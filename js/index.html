@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacking Terminal</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+      body {
+        background-color: rgb(1, 120, 1);
+        color: white;
+        font-family: "Anonymous Pro", monospace;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create a hacking simulator which has green background and it shows these messages with random delay of 1 to 7 seconds 
+    
+    Initializing Hacking...
+    Reading your Files...
+    Password files Detected...
+    Sending all passwords and personal files to server...
+    Cleaning up...
+    The three dots must blink so that it looks like a real terminal
+    -->
+    <script>
+      const additem = async (item) => {
+        await randomdelay();
+        let div = document.createElement("div");
+        div.innerHTML = item;
+        document.body.append(div);
+      };
+      const randomdelay = () => {
+        return new Promise((resolve, reject) => {
+          timeout = 1 + 6 * Math.random(); // 1 - 7 (inclusive)
+          setTimeout(() => {
+            resolve();
+          }, timeout * 1000);
+        });
+      };
+
+      async function main(){
+
+        setInterval(()=>{
+            let last=document.body.lastElementChild;
+            if(last.innerHTML.endsWith("...")){
+                last.innerHTML=last.innerHTML.slice(0,last.innerHTML.length-3)
+            }
+            else{
+            last.innerHTML=last.innerHTML + '.';}
+        },400);
+
+        let text = [
+            "Initialized Hacking now reading your data",
+            "Reading your Files",
+            "Password files Detected",
+            "Sending all passwords and personal files to server",
+            "Cleaning up"
+        ];
+
+        for (const item of text) {
+            await additem(item);
+        }
+      }
+      main()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+// make a faulty calculator that  adds two numbers and gives the  wrong result 20% of the time and correct only 90% of time as output.
+// + -- -
+// - -- *
+// * -- /
+// / -- +
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faulty Calculator</title>
+  </head>
+  <body>
+    <script>
+      let mr;
+
+      do {
+        mr = Math.random();
+
+        let a = prompt("Enter the first number: ");
+        let ia = parseInt(a);
+        let b = prompt("Enter the second number: ");
+        let ib = parseInt(b);
+        let o = prompt("Enter the operation: ");
+
+        if (mr < 0.2) {
+          // Correct calculation
+          if (o == "+") {
+            let res = ia + ib;
+            alert("Output: " + res);
+          } else if (o == "-") {
+            let res = ia - ib;
+            alert("Output: " + res);
+          } else if (o == "*") {
+            let res = ia * ib;
+            alert("Output: " + res);
+          } else if (o == "/") {
+            let res = ia / ib;
+            alert("Output: " + res);
+          } else {
+            alert("Invalid Operation");
+          }
+        } else {
+          // Incorrect calculation
+          if (o == "+") {
+            let res = ia - ib;
+            alert("Output: " + res);
+          } else if (o == "-") {
+            let res = ia * ib;
+            alert("Output: " + res);
+          } else if (o == "*") {
+            let res = ia / ib;
+            alert("Output: " + res);
+          } else if (o == "/") {
+            let res = ia + ib;
+            alert("Output: " + res);
+          } else {
+            alert("Invalid Operation");
+          }
+        }
+      } while (true);
+    </script>
+  </body>
+</html>

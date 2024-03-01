@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        .card{
+            display: flex;
+            border: 2px solid black;
+            width: 760px;
+            background-color: rgba(0, 0, 0, 0.852);
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            border-radius: 3px;
+        }
+        .image{
+            padding: 4px;
+            position: relative;
+        }
+        .img{
+            border-radius: 7px;
+            margin-right: 7px;
+        }
+        .text{
+            color: white;
+        }
+        .capsule{
+           position: absolute;
+           bottom: 7.5px;
+           z-index: 10;
+           right: 10.5px;
+           background-color: black;
+           color: white;
+           padding: 3px;
+           font-size: 13px;
+           border-radius: 3px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="image">
+                <img class="img" src="https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB0alxLSXCSEPITzWr-XXUiv1oglQ" alt="">
+                <div class="capsule">31:22</div>
+            </div>
+            <div class="text">
+                <h1>Introduction to Backend | Sigma WebDev </h1>
+                <p>CodeWithHarry . 727K . 2 months ago</p>
+            </div>
+        </div>
+    </div>
+    <script src="card.js"></script>  
+</body>
+</html>
